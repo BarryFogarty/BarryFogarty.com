@@ -1,0 +1,18 @@
+{{ define "menu" }}
+	{{ partial "menu.html" . }}	
+{{ end }}
+{{ define "main" }}
+	<section>
+		<div class="container">
+
+			<header>
+				<h2>{{ .Title }}</h2>
+			</header>
+
+			<a href="#" class="image featured"><img src="/img/single.jpg" alt="" /></a>
+
+			{{ .Content }}
+
+		</div>
+	</section>
+{{ end }}

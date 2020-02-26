@@ -1,0 +1,20 @@
+{{ define "menu" }}
+	{{ partial "menu.html" . }}	
+{{ end }}
+{{ define "main" }}
+	<section id="contact">
+		<div class="container">
+
+			<header>
+				<h2>{{ .Title }}</h2>
+			</header>
+
+			{{ .Content }}
+
+		</div>
+	</section>
+{{ end }}
+
+{{ define "contactform" }}
+	<!-- NO CONTACT FORM HERE -->
+{{ end }}

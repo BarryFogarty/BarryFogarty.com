@@ -1,0 +1,72 @@
+languageCode = "en-gb"
+title = "Barry Fogarty - Certified Umbraco Developer"
+baseurl = "https://barryfogarty.com/"
+theme = "prologue"
+
+[params]
+  name = "Barry Fogarty"
+  description = "Certified Umbraco Developer"
+  copyright = "Barry Fogarty 2019."
+
+[[params.social]]
+  medium = "twitter"
+  icon = "twitter"
+  link = "https://twitter.com/barryfogarty"
+
+[[params.social]]
+  medium = "github"
+  icon = "github"
+  link = "https://github.com/BarryFogarty"
+
+[[params.social]]
+  medium = "linkedin"
+  icon = "linkedin"
+  link = "https://www.linkedin.com/in/barryfogarty/"
+
+[[params.social]]
+  medium = "email"
+  icon = "envelope"
+  link = "mailto:hi@barryfogarty.com"
+
+# Portfolio column one
+
+[[params.portfolio1]]
+  title = "Fed by Abel & Cole"
+  alt = "Organic food delivery service for London offices"
+  source = "img/fed/tile.jpg"
+  url = "https://wearecogworks.com/work/fed"  #Go to project landing page first / phase 2
+  target = "_blank"
+
+[[params.portfolio1]]
+  title = "Starbucks"
+  alt = "Localised sites for Starbuck's range of consumer goods"
+  source = "img/starbucks/tile.jpg"
+  url = "#"
+
+# Portfolio column two
+
+[[params.portfolio2]]
+  title = "Conde Nast"
+  alt = "Flagship site for the Conde Nast range of magazines"
+  source = "img/conde/tile.png"
+  url = "#"
+
+[[params.portfolio2]]
+  title = "Good Energy"
+  alt = "Switch to 100% renewable energy from Good Energy"
+  source = "img/goodenergy/tile.png"
+  url = "#"
+
+# Portfolio column 3
+
+[[params.portfolio3]]
+  title = "Places Leisure"
+  alt = "Membership, timetables and location information for the company's 125 leisure centres across the UK"
+  source = "img/places/tile.jpg"
+  url = "#"
+
+[[params.portfolio3]]
+  title = "Tesco PLC"
+  alt = "Corporate site for Tesco PLC"
+  source = "img/tesco/tile.png"
+  url = "#"
