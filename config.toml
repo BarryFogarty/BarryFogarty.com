@@ -6,7 +6,7 @@ theme = "prologue"
 [params]
   name = "Barry Fogarty"
   description = "Certified Umbraco Developer"
-  copyright = "Barry Fogarty 2019."
+  copyright = "Barry Fogarty 2020."
 
 [[params.social]]
   medium = "twitter"
@@ -34,8 +34,7 @@ theme = "prologue"
   title = "Fed by Abel & Cole"
   alt = "Organic food delivery service for London offices"
   source = "img/fed/tile.jpg"
-  url = "https://wearecogworks.com/work/fed"  #Go to project landing page first / phase 2
-  target = "_blank"
+  url = "/projects/fed"
 
 [[params.portfolio1]]
   title = "Starbucks"
