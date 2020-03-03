@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Projects on Barry Fogarty - Certified Umbraco Developer</title>
+    <link>https://barryfogarty.com/projects/</link>
+    <description>Recent content in Projects on Barry Fogarty - Certified Umbraco Developer</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-gb</language>
+    <lastBuildDate>Wed, 26 Feb 2020 19:19:15 +0000</lastBuildDate>
+    
+	<atom:link href="https://barryfogarty.com/projects/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Fed by Abel &amp; Cole</title>
+      <link>https://barryfogarty.com/projects/fed/</link>
+      <pubDate>Wed, 26 Feb 2020 19:19:15 +0000</pubDate>
+      
+      <guid>https://barryfogarty.com/projects/fed/</guid>
+      <description>My client, Cogworks, was engaged by Abel &amp; Cole to build an eCommerce platform to bring their organic, sustainable food delivery service to life. Together, we built a fast, responsive Umbraco website, with eCommerce functionality provided by Merchello to handle their product catalog. The system allowed customers to set up regular and one-off orders of Abel &amp; Cole&#39;s delicious organic food range. We built a custom REST web API to sync product, order and delivery information between the website and the client&#39;s fulfillment systems.</description>
+    </item>
+    
+  </channel>
+</rss>
