@@ -3,35 +3,71 @@
 {{ end }}
 {{ define "main" }}
 	<!-- Intro -->
-	<section id="top" class="dark cover project-hero" style="background-image: url({{ .Params.hero.image | safeHTMLAttr }});">
+	<section id="top" class="dark overlay cover project-hero" style="background-image: url({{ $.Params.hero.image | safeHTMLAttr }});">
 		<div class="container">
 
 			<header>
-				<h2 class="alt">{{ .Description }}</p>
+				<h2 class="alt">{{ .Title }}</h2>
 			</header>
 
-			<footer>
+			<!-- <footer>
 				<a href={{ printf "%s" $.Params.sitelink }} class="button scrolly">Visit Site</a>
-			</footer>
+			</footer> -->
 
 		</div>
     </section>
 
-    <section id="project">
-        <div id="project-content">
-            {{ .Content }}
-        </div>
-        <div id="project-sidebar">
-            <ul>
-                <li>
-                    <strong>Agency</strong>
-                    <p><a href={{ printf "%s" $.Params.agency.url }}>{{ .Params.agency.name }}</a></p>
-                </li>
-                <li>
-                    <strong>Technologies</strong>
-                    <p>{{ .Params.tech }}</p>
-                </li>
-            </ul>
+    <section id="project" class="two">
+        <div class="container">
+            <div class="row">
+                <div class="9u 12u$(mobile)">
+                    <header>
+                        <h2>{{ .Description }}</h2>
+                    </header>
+                    {{ .Content }}
+                    <footer>
+                        <h3>Project Links</h3>
+                        <a href={{ printf "%s" $.Params.sitelink }} class="button" target="_blank" rel="nofollow">Live website</a>&nbsp;
+                        <a href={{ printf "%s" $.Params.agency.url }} class="button" target="_blank" rel="nofollow">Agency Case Study</a>
+                    </footer>
+                   
+                </div>
+                <div class="3u$ 12u$(mobile)">
+                    <ul>
+                        <li>
+                            <strong>Agency</strong>
+                            <p><a href={{ printf "%s" $.Params.agency.url }} target="_blank" rel="nofollow">{{ .Params.agency.name }}</a></p>
+                        </li>
+                        {{ with .Params.deliverables }}
+                        <li>
+                            <strong>Deliverables</strong>
+                            <p>
+                                {{ range . }}
+                                    {{ . }}<br/>
+                                {{ end }}
+                            </p>
+                        </li>
+                        {{ end }}
+                        {{ with .Params.technologies }}
+                        <li>
+                            <strong>Technologies</strong>
+                            <p>
+                                {{ range . }}
+                                    {{ . }}<br/>
+                                {{ end }}
+                            </p>
+                        </li>
+                        {{ end }}
+                    </ul>
+                </div>
+            </div>
+
+            <div id="project-content">
+                
+            </div>
+            <div id="project-sidebar">
+                
+            </div>
         </div>
     </section>
     
