@@ -54,7 +54,7 @@ disableKinds = ['taxonomyTerm']
 [[params.portfolio2]]
   title = "Curzon Arificial Eye"
   alt = "A cinema and on-demand streaming listings site"
-  source = "img/curzon/tile.png"
+  source = "img/curzon/tile.jpg"
   url = "/projects/curzon"
 
 [[params.portfolio2]]
