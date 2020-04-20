@@ -1,5 +1,5 @@
 ---
-title: "Fed by Abel & Cole"
+title: "Fed by Abel & Cole Case Study: Barry Fogarty"
 description: "A regular food delivery service for London offices.  Powered by Umbraco, Merchello and a bespoke API."
 date: 2020-02-26T19:19:15Z
 draft: false
@@ -8,7 +8,7 @@ deliverables: [Website, Umbraco CMS, Merchello eCommerce platform, Custom API fo
 technologies: [Umbraco,Merchello,Swagger,Vue.js,C#]
 hero:
     image: /img/fed/hero.jpg
-    alt: Organic food delivery service for London offices
+    text: Fed by Abel & Cole
 agency:	
     name: Cogworks
     url: https://wearecogworks.com/work/fed

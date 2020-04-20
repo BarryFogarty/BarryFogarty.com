@@ -1,7 +1,8 @@
 languageCode = "en-gb"
-title = "Barry Fogarty - Certified Umbraco Developer"
+title = "Barry Fogarty - Certified Umbraco Developer Cornwall, Plymouth & Bristol"
 baseurl = "https://barryfogarty.com/"
 theme = "prologue"
+disableKinds = ['taxonomyTerm']
 
 [params]
   name = "Barry Fogarty"
@@ -42,18 +43,24 @@ theme = "prologue"
   source = "img/starbucks/tile.jpg"
   url = "#"
 
+[[params.portfolio1]]
+  title = "Good Energy"
+  alt = "Switch to 100% renewable energy from Good Energy"
+  source = "img/goodenergy/tile.png"
+  url = "#"
+
 # Portfolio column two
+
+[[params.portfolio2]]
+  title = "Curzon Arificial Eye"
+  alt = "A cinema and on-demand streaming listings site"
+  source = "img/curzon/tile.png"
+  url = "/projects/curzon"
 
 [[params.portfolio2]]
   title = "Conde Nast"
   alt = "Flagship site for the Conde Nast range of magazines"
   source = "img/conde/tile.png"
-  url = "#"
-
-[[params.portfolio2]]
-  title = "Good Energy"
-  alt = "Switch to 100% renewable energy from Good Energy"
-  source = "img/goodenergy/tile.png"
   url = "#"
 
 # Portfolio column 3
