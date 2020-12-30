@@ -7,8 +7,13 @@ disableKinds = ['taxonomyTerm']
 [params]
   name = "Barry Fogarty"
   description = "Certified Umbraco Developer"
-  copyright = "Barry Fogarty 2020."
+  copyright = "Barry Fogarty 2021"
 
+[[params.social]]
+  medium = "linkedin"
+  icon = "linkedin"
+  link = "https://www.linkedin.com/in/barryfogarty"
+  
 [[params.social]]
   medium = "twitter"
   icon = "twitter"
@@ -18,11 +23,6 @@ disableKinds = ['taxonomyTerm']
   medium = "github"
   icon = "github"
   link = "https://github.com/BarryFogarty"
-
-[[params.social]]
-  medium = "linkedin"
-  icon = "linkedin"
-  link = "https://www.linkedin.com/in/barryfogarty/"
 
 [[params.social]]
   medium = "email"
@@ -54,7 +54,7 @@ disableKinds = ['taxonomyTerm']
 [[params.portfolio2]]
   title = "Curzon Arificial Eye"
   alt = "A cinema and on-demand streaming listings site"
-  source = "img/curzon/tile.jpg"
+  source = "img/curzon/tile.png"
   url = "/projects/curzon"
 
 [[params.portfolio2]]

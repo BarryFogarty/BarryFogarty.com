@@ -1,31 +1,58 @@
 <!-- Contact -->
 <section id="contact" class="four">
-    <div class="container">
-
+    <div id="form-container" class="container">
         <header>
             <h2>Contact</h2>
         </header>
-
         <p>
             If you would like to speak to me about an upcoming project, request my CV, phone number - or just to say hi, 
             please send me a message.
         </p>
-
-        <form action="https://app.99inbound.com/api/e/xoFran1E" method="POST">
+        <form id="contact-form" action="https://usebasin.com/f/a1172cfd3fa9.json" method="POST">
             <div class="row">
-                <div class="6u 12u$(mobile)"><input type="text" name="name" placeholder="Name" required="true" /></div>
-                <div class="6u$ 12u$(mobile)"><input type="text" name="email" placeholder="Email" required="true" /></div>
+                <div class="6u 12u$(mobile)"><input type="text" id="fullname" name="name" placeholder="Name" required="true" /></div>
+                <div class="6u$ 12u$(mobile)"><input type="email" name="email" placeholder="Email" required="true" /></div>
                 <div class="12u$">
-                    <textarea name="message" placeholder="Message"required="true"></textarea>
+                    <textarea name="message" placeholder="Message" required="true"></textarea>
                 </div>
                 <div class="12u$">
-                    <input type="submit" value="Send Message" />
+                  <div id="recaptcha" 
+                    class="g-recaptcha"
+                    data-sitekey="6Lew3SMUAAAAAJ82QoS7gqOTkRI_dhYrFy1f7Sqy" 
+                    data-callback="onSubmit" 
+                    data-size="invisible">
+                  </div>
+                  <input id="submit" type="submit" value="Send Message" />
                 </div>
-            </div>
-            <div style="position: absolute; left: -5000px;">
-                <input type="checkbox" name="stupendous_mauve_argyle_whale" value="1" tabindex="-1" autocomplete="no"><!-- Anti spam measure -->
             </div>
         </form>
-
+        <script>onload();</script>
     </div>
+
+    <div id="contact-form-loading" class="container" style="display: none;padding: 2em 0;">
+      <div class="lds-grid">
+        <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+      </div>
+      <p>Processing..</p>
+    </div>
+
+    <div id="contact-form-thank-you" class="container" style="display: none;padding: 4em 0;">
+      <header>
+        <h2>Thank you for getting in touch.</h2>
+      </header>
+      <p>
+        <strong>Your message has been sent successfully. I'll be in touch ASAP!</strong>
+      </p>
+    </div>
+
+    <div id="contact-form-error" class="container" style="display: none;">
+      <header>
+        <h2>Error submitting form.</h2>
+      </header>
+      <p>
+        Sorry, there has been an error submitting the form.  Please message me on 
+        <a href="https://www.linkedin.com/in/barryfogarty">LinkedIn</a>.
+      </p>
+    </div>
+
 </section>

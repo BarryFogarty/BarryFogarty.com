@@ -9,89 +9,139 @@
 		<!--[if lte IE 8]><link rel="stylesheet" href="/css/ie8.css" /><![endif]-->
 		<!--[if lte IE 9]><link rel="stylesheet" href="/css/ie9.css" /><![endif]-->
 		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-		<link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <script>
+      //Contact form scripts
+      function onSubmit(token) {
+        var form = $("#contact-form");
+        var loading = $("#contact-form-loading");
+        var error = $("#contact-form-error");
+
+        $.ajax({
+          url: form.attr('action'),
+          method: "POST",
+          data: form.serialize(),
+          dataType: "json",
+          success: function (data) {
+            if (data.success) {
+              /* successful submission - hide the form and show the success message */
+              loading.fadeToggle("fast", function() {
+                $("#contact-form-thank-you").fadeToggle("fast")
+              });
+            } else {
+              /* failed submission - log the output to the console and show the failure message */
+              console.log(data);
+              loading.fadeToggle("fast", function() {
+               error.fadeToggle("fast")
+              });
+            }
+          },
+          error: function () {
+            /* failed submission - show the failure message */
+            loading.fadeToggle("fast", function() {
+              error.fadeToggle("fast")
+            });
+          }
+        });
+      }
+
+      //Validate form, execute recaptcha if successful
+      function validate(event) {
+        event.preventDefault();
+        var form = document.querySelector("#contact-form");
+        if (form.reportValidity()) {
+          // Show loading panel
+          $("#form-container").fadeToggle("fast", function(){
+            $("#contact-form-loading").fadeToggle("fast")
+          });
+          grecaptcha.execute();
+        }
+      }
+
+      //Bind validate function to the submit button 
+      function onload() {
+        var element = document.getElementById("submit");
+        element.onclick = validate;
+      }
+    </script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 	</head>
 	<body>
 
 		<!-- Header -->
-			<div id="header">
+    <div id="header">
+      <div class="top">
+        <!-- Logo -->
+        <div id="logo">
+          <a href="/">
+            <span class="image avatar48"><img src="/img/avatar.jpg" alt="Barry Fogarty - Profile Photo" /></span>
+            <h1 id="title">{{ .Site.Params.name }}</h1>
+            <p>{{ .Site.Params.description }}</p>
+          </a>
+        </div>
 
-				<div class="top">
+        <!-- Nav -->
+        <nav id="nav">
+          {{ block "menu" . }}
+          <ul>
+            <li><a href="#top" id="top-link" class="skel-layers-ignoreHref"><span class="icon fa-home">Intro</span></a></li>
+            <li><a href="#portfolio" id="portfolio-link" class="skel-layers-ignoreHref"><span class="icon fa-th">Portfolio</span></a></li>
+            <li><a href="#about" id="about-link" class="skel-layers-ignoreHref"><span class="icon fa-user">About Me</span></a></li>
+            <li><a href="#contact" id="contact-link" class="skel-layers-ignoreHref"><span class="icon fa-envelope">Contact</span></a></li>
+          </ul>
+          {{ end }}
+        </nav>
+      </div>
 
-					<!-- Logo -->
-						<div id="logo">
-							<span class="image avatar48"><img src="/img/avatar.jpg" alt="Barry Fogarty - Profile Photo" /></span>
-							<h1 id="title">{{ .Site.Params.name }}</h1>
-							<p>{{ .Site.Params.description }}</p>
-						</div>
+      <div class="bottom">
+        <!-- Social Icons -->
+        <ul class="icons">
+            {{ range .Site.Params.social }}
+              <li><a href="{{ .link }}" class="icon fa-{{ .icon }}" target="_blank"><span class="label">{{ .medium }}</span></a></li>
+            {{ end }}
+        </ul>
+      </div>
 
-					<!-- Nav -->
-						<nav id="nav">
-							{{ block "menu" . }}
-							<ul>
-								<li><a href="#top" id="top-link" class="skel-layers-ignoreHref"><span class="icon fa-home">Intro</span></a></li>
-								<li><a href="#portfolio" id="portfolio-link" class="skel-layers-ignoreHref"><span class="icon fa-th">Portfolio</span></a></li>
-								<li><a href="#about" id="about-link" class="skel-layers-ignoreHref"><span class="icon fa-user">About Me</span></a></li>
-								<li><a href="#contact" id="contact-link" class="skel-layers-ignoreHref"><span class="icon fa-envelope">Contact</span></a></li>
-							</ul>
-							{{ end }}
-						</nav>
-
-				</div>
-
-				<div class="bottom">
-
-					<!-- Social Icons -->
-						<ul class="icons">
-              			{{ range .Site.Params.social }}
-              				<li><a href="{{ .link }}" class="icon fa-{{ .icon }}" target="_blank"><span class="label">{{ .medium }}</span></a></li>
-              			{{ end }}
-						</ul>
-				</div>
-
-			</div>
+    </div>
 
 		<!-- Main -->
-			<div id="main">
+    <div id="main">
 
-				{{ block "main" . }}
+      {{ block "main" . }}
 
-				{{ end }}
-				
-				{{ block "contactform" . }}
-					{{ partial "contactform.html" . }}
-				{{ end }}
+      {{ end }}
+      
+      {{ block "contactform" . }}
+        {{ partial "contactform.html" . }}
+      {{ end }}
 
-			</div>
+    </div>
 
 		<!-- Footer -->
-			<div id="footer">
+    <div id="footer">
 
-				<!-- Copyright -->
-					<ul class="copyright">
-						<li>&copy; {{ .Site.Params.copyright }}</li>
-					</ul>
+      <!-- Copyright -->
+      <ul class="copyright">
+        <li>&copy; {{ .Site.Params.copyright }}</li>
+      </ul>
 
-			</div>
+    </div>
 
-		<!-- Scripts -->
-			<script src="/js/jquery.min.js"></script>
-			<script src="/js/jquery.scrolly.min.js"></script>
-			<script src="/js/jquery.scrollzer.min.js"></script>
-			<script src="/js/skel.min.js"></script>
-			<script src="/js/util.js"></script>
-			<!--[if lte IE 8]><script src="/js/ie/respond.min.js"></script><![endif]-->
-			<script src="/js/main.js"></script>
-			
-			<!-- Global site tag (gtag.js) - Google Analytics -->
-			<script async src="https://www.googletagmanager.com/gtag/js?id=UA-17722719-1"></script>
-			<script>
-			window.dataLayer = window.dataLayer || [];
-			function gtag(){dataLayer.push(arguments);}
-			gtag('js', new Date());
-
-			gtag('config', 'UA-17722719-1');
-			</script>
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/jquery.scrolly.min.js"></script>
+    <script src="/js/jquery.scrollzer.min.js"></script>
+    <script src="/js/skel.min.js"></script>
+    <script src="/js/util.js"></script>
+    <!--[if lte IE 8]><script src="/js/ie/respond.min.js"></script><![endif]-->
+    <script src="/js/main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.min.js" async defer></script>
+    <script src="https://www.googletagmanager.com/gtag/js?id=UA-17722719-1" async defer></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-17722719-1');
+    </script>
 
 	</body>
 </html>
