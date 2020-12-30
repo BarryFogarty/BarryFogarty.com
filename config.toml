@@ -41,13 +41,13 @@ disableKinds = ['taxonomyTerm']
   title = "Starbucks"
   alt = "Localised sites for Starbuck's range of consumer goods"
   source = "img/starbucks/tile.jpg"
-  url = "#"
+  url = ""
 
 [[params.portfolio1]]
   title = "Good Energy"
   alt = "Switch to 100% renewable energy from Good Energy"
   source = "img/goodenergy/tile.png"
-  url = "#"
+  url = ""
 
 # Portfolio column two
 
@@ -61,7 +61,7 @@ disableKinds = ['taxonomyTerm']
   title = "Conde Nast"
   alt = "Flagship site for the Conde Nast range of magazines"
   source = "img/conde/tile.png"
-  url = "#"
+  url = ""
 
 # Portfolio column 3
 
@@ -69,10 +69,10 @@ disableKinds = ['taxonomyTerm']
   title = "Places Leisure"
   alt = "Membership, timetables and location information for the company's 125 leisure centres across the UK"
   source = "img/places/tile.jpg"
-  url = "#"
+  url = ""
 
 [[params.portfolio3]]
   title = "Tesco PLC"
   alt = "Corporate site for Tesco PLC"
   source = "img/tesco/tile.png"
-  url = "#"
+  url = ""

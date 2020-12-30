@@ -15,40 +15,37 @@
         <div class="row">
             <div class="4u 12u$(mobile)">
             {{ range .Site.Params.portfolio1 }} 
+              {{ if ne .url "" }}
                 <a href="{{ .url }}">
-                    <article class="item">
-                        <img src="{{ .source }}" class="image fit" alt="{{ .alt }}" />
-                        <header>
-                            <h3>{{ .title }}</h3>
-                        </header>
-                    </article>
+                  {{ partial "card.html" . }}
                 </a>
+              {{ else }}
+                {{ partial "card.html" . }}
+              {{ end }}
             {{ end }}
             </div>
 
             <div class="4u 12u$(mobile)">
             {{ range .Site.Params.portfolio2 }} 
+              {{ if ne .url "" }}
                 <a href="{{ .url }}">
-                    <article class="item">
-                        <img src="{{ .source }}" class="image fit" alt="{{ .alt }}" />
-                        <header>
-                            <h3>{{ .title }}</h3>
-                        </header>
-                    </article>
+                  {{ partial "card.html" . }}
                 </a>
+              {{ else }}
+                {{ partial "card.html" . }}
+              {{ end }}
             {{ end }}
             </div>
 
             <div class="4u 12u$(mobile)">
             {{ range .Site.Params.portfolio3 }} 
+              {{ if ne .url "" }}
                 <a href="{{ .url }}">
-                    <article class="item">
-                        <img src="{{ .source }}" class="image fit" alt="{{ .alt }}" />
-                        <header>
-                            <h3>{{ .title }}</h3>
-                        </header>
-                    </article>
+                  {{ partial "card.html" . }}
                 </a>
+              {{ else }}
+                {{ partial "card.html" . }}
+              {{ end }}
             {{ end }}
             </div>
         </div>
